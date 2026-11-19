@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#e9f1df">
+  <title>A Little Something for Arun</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main class="page">
+    <section class="hero" id="home">
+      <div class="eyebrow">A LITTLE WORLD, JUST FOR YOU</div>
+      <div class="gift-icon" aria-hidden="true">🎁</div>
+      <h1>A Little Something<br><span>for Arun</span></h1>
+      <p class="intro">A few memories, a little letter, and some tiny surprises.</p>
+      <button class="primary" id="enterButton">Open your gift <span>♡</span></button>
+      <p class="signature">Made with love, just for you.</p>
+    </section>
+
+    <section class="world hidden" id="world">
+      <header class="world-header">
+        <p class="eyebrow">WELCOME TO YOUR LITTLE WORLD</p>
+        <h2>For you, Arun <span>✿</span></h2>
+        <p>Take your time. There's a little something in every corner.</p>
+      </header>
+
+      <nav class="tiles" aria-label="Gift sections">
+        <button class="tile" data-section="memories"><span class="tile-icon">📷</span><strong>Our Memories</strong><small>Little moments, kept close</small></button>
+        <button class="tile" data-section="letter"><span class="tile-icon">💌</span><strong>A Letter for You</strong><small>A few words from me</small></button>
+        <button class="tile" data-section="openwhen"><span class="tile-icon">🕊️</span><strong>Open When...</strong><small>For different kinds of days</small></button>
+        <button class="tile" data-section="surprises"><span class="tile-icon">🎀</span><strong>Little Surprises</strong><small>Something to discover</small></button>
+      </nav>
+
+      <section class="content-card hidden" id="memories">
+        <button class="back" data-back>← Back to the little world</button>
+        <p class="eyebrow">THE LITTLE THINGS</p>
+        <h2>Our Memories 📷</h2>
+        <p class="section-intro">A collection of moments I want to keep.</p>
+        <div class="photo-grid">
+          <!-- Replace these placeholders with your own images.
+               Example: <img src="photos/photo1.jpg" alt="Our memory"> -->
+          <div class="photo-placeholder"><span>＋</span><small>Add your first photo</small></div>
+          <div class="photo-placeholder"><span>＋</span><small>Add another memory</small></div>
+          <div class="photo-placeholder"><span>＋</span><small>A favourite moment</small></div>
+          <div class="photo-placeholder"><span>＋</span><small>One more for the album</small></div>
+        </div>
+        <p class="tip">To add photos: upload them into a folder named <b>photos</b>, then replace a placeholder in <code>index.html</code> with an image tag. See README for the easy steps.</p>
+      </section>
+
+      <section class="content-card hidden" id="letter">
+        <button class="back" data-back>← Back to the little world</button>
+        <p class="eyebrow">SOMETHING FROM THE HEART</p>
+        <h2>A Letter for You 💌</h2>
+        <article class="letter-paper">
+          <p class="letter-greeting">Dear Arun,</p>
+          <p class="letter-placeholder">Write your letter here. You can change these words in <code>index.html</code> and make this space completely yours.</p>
+          <p class="letter-signoff">With love,<br><span>Your name</span></p>
+        </article>
+      </section>
+
+      <section class="content-card hidden" id="openwhen">
+        <button class="back" data-back>← Back to the little world</button>
+        <p class="eyebrow">FOR WHATEVER THE DAY BRINGS</p>
+        <h2>Open When... 🕊️</h2>
+        <p class="section-intro">Choose one. A little note is tucked inside.</p>
+        <div class="note-list">
+          <details><summary>Open when you need a smile</summary><p>Add a sweet, funny message here.</p></details>
+          <details><summary>Open when you feel low</summary><p>Add a comforting message here.</p></details>
+          <details><summary>Open when you miss me</summary><p>Add a message that feels like a hug.</p></details>
+          <details><summary>Open when you need a reminder</summary><p>Add something you want Arun to remember.</p></details>
+        </div>
+        <p class="tip">Edit the note titles and messages in <code>index.html</code>.</p>
+      </section>
+
+      <section class="content-card hidden" id="surprises">
+        <button class="back" data-back>← Back to the little world</button>
+        <p class="eyebrow">A TINY BIT OF MAGIC</p>
+        <h2>Little Surprises 🎀</h2>
+        <p class="section-intro">Tap a gift to see what's waiting.</p>
+        <div class="surprise-grid">
+          <button class="surprise" data-message="Surprise one: write your special message here.">🎁<span>A little gift</span></button>
+          <button class="surprise" data-message="Surprise two: add a favourite memory, a joke, or a wish here.">🎟️<span>A tiny ticket</span></button>
+          <button class="surprise" data-message="Surprise three: add whatever would make Arun smile.">⭐<span>A little wish</span></button>
+        </div>
+        <p class="surprise-message" id="surpriseMessage" aria-live="polite">Your surprises are waiting...</p>
+      </section>
+      <footer>Made with care <span>♡</span></footer>
+    </section>
+  </main>
+  <script src="script.js"></script>
+</body>
+</html>
