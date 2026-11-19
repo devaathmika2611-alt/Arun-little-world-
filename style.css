@@ -206,3 +206,17 @@ footer {
     padding: 30px 22px;
   }
 }
+.gallery img {
+  width: 100%;
+  height: 230px;
+  object-fit: cover;
+  background: #fffaf0;
+  padding: 10px 10px 25px;
+  border: 1px solid #dfcbb0;
+  box-shadow: 0 5px 15px #9c806044;
+  transition: transform 0.3s ease;
+}
+
+.gallery img:hover {
+  transform: rotate(-2deg) scale(1.04);
+}
