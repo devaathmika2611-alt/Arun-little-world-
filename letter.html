@@ -4,9 +4,9 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>A Letter For You 💌</title>
+<title>A Letter For You ❤️</title>
 
-<link href="https://fonts.googleapis.com/css2?family=Caveat:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,500;1,500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Caveat:wght@400;500;600;700&family=Cormorant+Garamond:wght@500;600;700&display=swap" rel="stylesheet">
 
 <style>
 * {
@@ -16,135 +16,179 @@
 body {
   margin: 0;
   padding: 35px 12px;
-  background: #38291f;
-  background-image:
-    radial-gradient(ellipse at top, #73513b, transparent 65%);
-  color: #443023;
-  font-family: 'Caveat', cursive;
+  background:
+    radial-gradient(ellipse at top, #65442e, #241711 75%);
+  color: #4b3020;
+  font-family: 'Cormorant Garamond', serif;
 }
 
-.wrapper {
-  max-width: 750px;
+.scene {
+  max-width: 850px;
   margin: auto;
+}
+
+.heading {
+  text-align: center;
+  color: #e5c48c;
+  margin-bottom: 28px;
+}
+
+.heading .ornament {
+  font-size: 30px;
+  color: #c69b58;
+}
+
+.heading h1 {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 36px;
+  font-weight: 600;
+  letter-spacing: 2px;
+  margin: 8px 0;
+}
+
+.heading p {
+  font-style: italic;
+  letter-spacing: 3px;
+  font-size: 13px;
+  color: #c9a979;
+}
+
+.frame {
   padding: 12px;
-  background: #a77c50;
-  box-shadow: 0 10px 35px #140d09;
+  background: linear-gradient(135deg,
+    #6c4828, #d4b16d, #704b2b, #d8bd83);
+  border-radius: 4px;
+  box-shadow: 0 18px 55px #0009;
 }
 
 .paper {
   position: relative;
-  padding: 38px 25px;
+  padding: 45px 34px;
   background:
-    radial-gradient(ellipse at 15% 10%, #fff0cf66, transparent 40%),
-    radial-gradient(ellipse at 85% 90%, #99734c44, transparent 45%),
-    linear-gradient(135deg, #e9d2a9, #d9bd91, #ead5ae);
-  border: 3px double #795536;
-  outline: 1px solid #a17a4e;
-  outline-offset: -9px;
-  clip-path: polygon(
-    2% 1%, 8% 0.5%, 15% 1%, 23% 0.3%,
-    34% 1%, 45% 0.5%, 57% 1%, 68% 0.4%,
-    79% 1%, 91% 0.5%, 99% 2%,
-    98% 12%, 99% 25%, 98% 40%,
-    99% 55%, 98% 70%, 99% 85%,
-    98% 99%, 85% 98%, 72% 99%,
-    60% 98%, 48% 99%, 35% 98%,
-    22% 99%, 10% 98%, 1% 99%,
-    2% 85%, 1% 70%, 2% 55%,
-    1% 40%, 2% 25%, 1% 12%
-  );
+    radial-gradient(ellipse at 10% 15%, #fff4d4aa, transparent 40%),
+    radial-gradient(ellipse at 90% 85%, #b18a5144, transparent 45%),
+    linear-gradient(120deg, #f1dfbd, #e5cfaa, #f4e5c8);
+  border: 3px double #956c3d;
+  outline: 1px solid #b28b54;
+  outline-offset: -11px;
 }
 
-.inner-border {
-  border: 1px solid #9b7047;
-  padding: 27px 17px;
-  min-height: 500px;
-}
-
-.top-decoration {
-  text-align: center;
-  color: #845b38;
-  font-size: 30px;
-  margin-bottom: 10px;
-}
-
-h1 {
-  font-family: 'Playfair Display', serif;
-  font-style: italic;
-  font-weight: 500;
+.paper::before {
+  content: "❦";
+  position: absolute;
+  top: 12px;
+  left: 20px;
   font-size: 27px;
+  color: #a47b46;
+}
+
+.paper::after {
+  content: "❦";
+  position: absolute;
+  bottom: 12px;
+  right: 20px;
+  font-size: 27px;
+  color: #a47b46;
+}
+
+.inner {
+  border: 1px solid #b18a56;
+  padding: 25px 22px;
+}
+
+.top {
   text-align: center;
-  color: #69462e;
-  margin: 5px 0 8px;
+  color: #956d3c;
+  font-size: 30px;
+  margin-bottom: 5px;
+}
+
+.title {
+  text-align: center;
+  font-size: 34px;
+  color: #674126;
+  font-weight: 600;
+  font-style: italic;
+  margin: 0;
 }
 
 .subtitle {
   text-align: center;
-  font-size: 19px;
-  color: #886344;
-  margin-bottom: 30px;
-}
-
-.letter-text {
-  font-size: 23px;
-  line-height: 1.48;
-  font-weight: 500;
-  white-space: pre-wrap;
-  overflow-wrap: break-word;
-  color: #38291f;
-}
-
-.letter-text strong {
-  font-weight: 700;
-}
-
-.signature {
-  text-align: right;
-  font-size: 25px;
-  margin-top: 20px;
-  color: #67442e;
-}
-
-.bottom-decoration {
-  text-align: center;
-  font-size: 30px;
-  margin-top: 28px;
-  color: #825738;
-}
-
-.footer {
-  text-align: center;
-  color: #e8cfaa;
-  font-family: 'Playfair Display', serif;
-  font-size: 12px;
-  margin-top: 22px;
+  font-size: 17px;
   letter-spacing: 2px;
+  color: #987044;
+  margin: 8px 0 28px;
 }
 
-@media(max-width:480px) {
+.letter {
+  font-family: 'Caveat', cursive;
+  font-size: 23px;
+  font-weight: 500;
+  line-height: 1.5;
+  color: #39271d;
+  white-space: pre-wrap;
+  overflow-wrap: anywhere;
+}
+
+.seal {
+  width: 75px;
+  height: 75px;
+  margin: 35px auto 5px;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: radial-gradient(circle at 35% 30%,
+    #a74646, #6d171e 75%);
+  color: #eacb91;
+  font-size: 34px;
+  box-shadow: 0 5px 12px #58301d77;
+  border: 3px solid #8a3431;
+}
+
+.bottom {
+  text-align: center;
+  color: #956b3c;
+  font-size: 26px;
+  margin-top: 15px;
+}
+
+.end {
+  text-align: center;
+  color: #e3c28d;
+  margin-top: 25px;
+  font-size: 13px;
+  letter-spacing: 3px;
+}
+
+@media(max-width:500px) {
   body {
-    padding: 18px 7px;
+    padding: 20px 7px;
   }
 
-  .wrapper {
+  .frame {
     padding: 7px;
   }
 
   .paper {
-    padding: 20px 10px;
+    padding: 32px 17px;
   }
 
-  .inner-border {
-    padding: 20px 12px;
+  .inner {
+    padding: 23px 13px;
   }
 
-  .letter-text {
+  .letter {
     font-size: 21px;
     line-height: 1.45;
   }
 
-  h1 {
-    font-size: 23px;
+  .title {
+    font-size: 28px;
+  }
+
+  .heading h1 {
+    font-size: 29px;
   }
 }
 </style>
@@ -152,70 +196,72 @@ h1 {
 
 <body>
 
-<div class="wrapper">
-<div class="paper">
-<div class="inner-border">
+<div class="scene">
 
-<div class="top-decoration">❦ ✧ ❦</div>
+  <div class="heading">
+    <div class="ornament">✧ ❦ ✧</div>
+    <h1>To My Favourite Person</h1>
+    <p>A LITTLE PIECE OF MY HEART</p>
+  </div>
 
-<h1>A Letter For You</h1>
-<div class="subtitle">A little piece of my heart ♡</div>
+  <div class="frame">
+    <div class="paper">
+      <div class="inner">
 
-<div class="letter-text">Hello my favourite person,👋
+        <div class="top">❧ ✧ ❧</div>
 
-First of all happy Anniversary thangapullaa......
+        <h2 class="title">A Letter For You</h2>
+        <div class="subtitle">Forever & Always ♡</div>
+
+        <div class="letter" id="letter">
+</div>
+
+        <div class="seal">♥</div>
+
+        <div class="bottom">❦ &nbsp; With Love &nbsp; ❦</div>
+
+      </div>
+    </div>
+  </div>
+
+  <div class="end">MADE WITH LOVE · ALWAYS & FOREVER</div>
+
+</div>
+
+<script>
+const originalLetter = `Hello my favourite person,👋
+
+  First of all happy Anniversary thangapullaa......
 Innayoda itha 5 years um aayiruch🤭 ini next enna plan boss😌
-Seri summa kette😁. ath ea Theriyala pa unnak letter ezhuthanum na mattum avlo pudikkith pa🙈 ye nnu Theriyala
-
+Seri summa kette😁. ath ea Theriyala pa unnak letter ezhuthanum na mattum avlo pudikkith pa🙈 ye nnu Theriyala 
 Approm ith eaa nna eppavum sollara mari ye summa tha ezhuthanum thonnuch athaa normally ezhuthara maari unnode good side and bad side appadi lam elle namma cute moments pathi ezhuthanum thonnuch atha soo...
+   Full aaa read pannanum pa
 
-Full aaa read pannanum pa
+       Seri ippo unnak nyabakam irukka pa namma first first bus moments 😉 madila ni paduthtt iruthe ennode shoulder le josa vum perfect frame moment le... Approm pinne na un sholder le paduth iruthath... And etc..
+Seri pa appo nenach paathiya ni ith vare lam varum nnu? 
+na sathiyama nenaikale ippadi lam aavum nnu approm pinne namma _first date_ athum un birthday kk🤭 na poi solli lam veliye poyiruke... but ath lam friends koode, first time ath tha poi solli oru person koode thaniya veliye porath athum kava kk na Inge palakkad ivlo Varsham iruth anga ponnathe elle unkoode tha ponum nnu iruthrukk pola namma first first thaniya photo eduthkittath....neraya pesanath....munnadi full appadiye dam view side le nammak pudicha person vere yarum disturbance kk ellame nalla pesikkittath unnmayave ni ivlo pesuve nnu ennak appo tha therinjth pa🤭.... Approm pinne first hug.....🫂 yyoooo athokke alogikkumbo thanne heartil okke oru vere feel aaa...
+*Always memorable 😇* lle
 
-Seri ippo unnak nyabakam irukka pa namma first first bus moments 😉 madila ni paduthtt iruthe ennode shoulder le josa vum perfect frame moment le... Approm pinne na un sholder le paduth iruthath... And etc..
-
-Seri pa appo nenach paathiya ni ith vare lam varum nnu?
-na sathiyama nenaikale ippadi lam aavum nnu approm pinne namma first date athum un birthday kk🤭 na poi solli lam veliye poyiruke... but ath lam friends koode, first time ath tha poi solli oru person koode thaniya veliye porath athum kava kk na Inge palakkad ivlo Varsham iruth anga ponnathe elle unkoode tha ponum nnu iruthrukk pola namma first first thaniya photo eduthkittath....neraya pesanath....munnadi full appadiye dam view side le nammak pudicha person vere yarum disturbance kk ellame nalla pesikkittath unnmayave ni ivlo pesuve nnu ennak appo tha therinjth pa🤭.... Approm pinne first hug.....🫂 yyoooo athokke alogikkumbo thanne heartil okke oru vere feel aaa...
-
-<strong>Always memorable 😇</strong> lle
-
-Pinne Goutham Ettan sowmi te lam koode pesane leee 😌
-
+            Pinne Goutham Ettan sowmi te lam koode pesane leee 😌 
 Aana pa ith munnadiye namma renndum thaniya meet pannirukkom annak ni vandi service kk vida vo appadi ennamo vanthruthe le Palakkad nyabakam irukka? Ange palakkad vech pesanom le but thaniya pesanath un birthday kk tha annak full aaave rennd perum neraya time spend pannom le kava kk lam poyi correct aa evening sesu sonna ange varalam nnu ennak eppadi iruthch theriyumma😍😚
 Antha full day happy ya iruthom le unnakum appadi thanne pa?
-
-Pinne enna namma Valparai trip 🤭 ange kava kk ponnath koode pakuthi tha poi ea nna annak na work kk tha ponne but first aa poi sollitt ivlo duram vere ange ni stadium vanth ethara vara ennak evlo tension iruthch theriyumma....pesame marupadiyum bus keri work kk poyiralam nnu lam nenache😂 en life laye ivlo tension but at the same time excitement um iruthath kedayath🤭... first couple trip le😌
-
+              Pinne enna namma Valparai trip 🤭 ange kava kk ponnath koode pakuthi tha poi ea nna annak na work kk tha ponne but first aa poi sollitt ivlo duram vere ange ni stadium vanth ethara vara ennak evlo tension iruthch theriyumma....pesame marupadiyum bus keri work kk poyiralam nnu lam nenache😂 en life laye ivlo tension but at the same time excitement um iruthath kedayath🤭... first couple trip le😌
 Serikum annak tha seen.... Oru minit late aa irunthalum na gaali😂
-
 But anakkum evlo excitement le iruthe theriyuma...but ni full aa tension laye iruthe le enne correct time kk konnd vidanum nnu lam yosich aana back seat le na full happy mode😂😂
-
-Semma feel nalla photos kedach ange iruthum but ange neraya pesa mudiyale laaa aana vere onnu nadathch🙈 nyabakam irukka da 😌
-Ath kiss ne solla mudiyath😂 lips touch aanathe theriyale 🤭 angane avde vech first kiss 😚
-
+ Semma feel nalla photos kedach ange iruthum but ange neraya pesa mudiyale laaa aana vere onnu nadathch🙈 nyabakam irukka da 😌
+Ath kiss ne solla mudiyath😂 lips touch aanathe theriyale 🤭angane avde vech first kiss 😚
 Serikum ennak eppo unne romba pudikum theriyumma ppa en mele just shoulder le Kai vekkave ni avlo nervous aane lee ayyooo appo tha thonnuch ni ivlo innocent aa nnu... paavam chekkan😚😚 kozhappamilla tta ini kore time inndo loo korach korach aayi thannola😌🙈....
+         Pinne pinne recent aaa kava kk ponnom le ath serikum na unna paakara vara evlo kovama iruthe theriyuma niye yosich paaru unne pakka venndi mattum veetula ennelamo poi solli vantha aashan vere yarayo drop panna poyirukkararu😤 ennak evlo kovam vanthch theriyumma aana enna pandrath unna paatha antha second ennak ath onnume thonnale 😒 un face irukk le athum antha eyes ath paathale pinne chuttum ullath onnum kaanulla🫠🫠 Njan enth cheyyana athnale tha niyyum thappichkitte irukke engitte🤭🤭
+               Ennak eaa ippadi lam thonnuth nnu sathiyama theriyale broo☹️ aana ennamo ungitte mattum thaaa eaa feelings okke varunnullu....yosich paaru nammak nnu mattum oru person namma ella feelings um kaamikka mudiyara person namma kovam,sangadam, polambal,chirip,shy,love pinne pinneee......angane ella feelings um thonnana special person..... Serikum le Ingane okke enik ninteduth parayanam nnu innd pakshe unnake theriyum...unna paatha approm ennak eaa nne theriyale pesa varathille ni peasarath mattum tha kekkanum thonnuth
+                 Intha 5 years le evlavo changes vanthrukk namma rennd perukkum physically and mentally but engeyo innum na antha innocent aana Arun eaa miss pandre ppa athukk nnu ippo irukka unna pudikkale nnu kedayath ellam as a part of life thaane eppadi irunthalum ni eaa thangapulle thaane ppa
 
-Pinne pinne recent aaa kava kk ponnom le ath serikum na unna paakara vara evlo kovama iruthe theriyuma niye yosich paaru unne pakka venndi mattum veetula ennelamo poi solli vantha aashan vere yarayo drop panna poyirukkararu😤 ennak evlo kovam vanthch theriyumma aana enna pandrath unna paatha antha second ennak ath onnume thonnale 😒 un face irukk le athum antha eyes ath paathale pinne chuttum ullath onnum kaanulla🫠🫠 Njan enth cheyyana athnale tha niyyum thappichkitte irukke engitte🤭🤭
+     *My always special person*
+    Njan ippo paraya do niyya ith vennda nnu sollara vara unnoda pakkam unnakaga na iruppe eppavum🥹 
+Shooo feel aavunnu daaa enik kannan thonnunnu ninne....🥺.        Seri seri pothum neraya pesitte unnakum bore adikum baaki ullath nokkiko tta
+ *_love you so much thangame😉_*`;
 
-Ennak eaa ippadi lam thonnuth nnu sathiyama theriyale broo☹️ aana ennamo ungitte mattum thaaa eaa feelings okke varunnullu....yosich paaru nammak nnu mattum oru person namma ella feelings um kaamikka mudiyara person namma kovam,sangadam, polambal,chirip,shy,love pinne pinneee......angane ella feelings um thonnana special person..... Serikum le Ingane okke enik ninteduth parayanam nnu innd pakshe unnake theriyum...unna paatha approm ennak eaa nne theriyale pesa varathille ni peasarath mattum tha kekkanum thonnuth
-
-Intha 5 years le evlavo changes vanthrukk namma rennd perukkum physically and mentally but engeyo innum na antha innocent aana Arun eaa miss pandre ppa athukk nnu ippo irukka unna pudikkale nnu kedayath ellam as a part of life thaane eppadi irunthalum ni eaa thangapulle thaane ppa
-
-<div class="signature">
-<strong>My always special person</strong><br>
-Njan ippo paraya do niyya ith vennda nnu sollara vara unnoda pakkam unnakaga na iruppe eppavum🥹
-<br><br>
-Shooo feel aavunnu daaa enik kannan thonnunnu ninne....🥺. Seri seri pothum neraya pesitte unnakum bore adikum baaki ullath nokkiko tta
-<br><br>
-<strong>love you so much thangame😉</strong>
-</div>
-
-<div class="bottom-decoration">❧ ♡ ❧</div>
-
-</div>
-</div>
-</div>
-
-<div class="footer">MADE WITH LOVE · ALWAYS & FOREVER</div>
+document.getElementById("letter").textContent = originalLetter;
+</script>
 
 </body>
 </html>
