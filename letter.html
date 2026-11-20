@@ -9,15 +9,16 @@
 <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@400;500;600;700&family=Cormorant+Garamond:wght@500;600;700&display=swap" rel="stylesheet">
 
 <style>
+  
 * {
   box-sizing: border-box;
 }
 
 body {
   margin: 0;
-  padding: 30px 10px;
-  background: radial-gradient(ellipse at 50% 20%, #795239, #24140f 80%);
-  color: #4b3020;
+  padding: 35px 12px;
+  background: radial-gradient(ellipse at top, #651b25, #26070d 75%);
+  color: #401b13;
   font-family: 'Cormorant Garamond', serif;
 }
 
@@ -28,104 +29,149 @@ body {
 
 .heading {
   text-align: center;
-  color: #e9c98d;
-  margin-bottom: 30px;
+  color: #e9c27b;
+  margin-bottom: 32px;
 }
 
 .heading .ornament {
-  color: #d7ad65;
   font-size: 38px;
+  color: #e0b45f;
 }
 
 .heading h1 {
-  font-size: 36px;
-  font-weight: 600;
-  letter-spacing: 3px;
-  margin: 8px 0;
-  text-shadow: 0 2px 12px #c18a45aa;
+  font-size: 43px;
+  font-style: italic;
+  letter-spacing: 2px;
+  color: #f0cf91;
+  text-shadow: 0 3px 15px #d49a4b66;
 }
 
 .heading p {
   font-style: italic;
-  letter-spacing: 3px;
-  font-size: 13px;
-  color: #c9a979;
+  letter-spacing: 4px;
+  color: #e1bd82;
 }
 
 .frame {
-  padding: 14px;
+  padding: 13px;
   background: linear-gradient(135deg,
-    #55351f, #e1bd75, #79502b, #f0d79b, #55351f);
-  box-shadow: 0 20px 50px #000a, 0 0 25px #c49a5a55;
+    #54251a, #f1cc7d, #75401e, #f5d99a, #552218);
   border-radius: 5px;
+  box-shadow: 0 20px 55px #000b;
 }
 
 .paper {
   position: relative;
-  padding: 40px 25px;
+  padding: 38px 25px;
   background:
-    radial-gradient(circle at 0% 0%, #fff5d588, transparent 35%),
-    radial-gradient(circle at 100% 100%, #a77c4844, transparent 40%),
-    repeating-linear-gradient(
-      0deg,
-      #e8d3ad08 0px,
-      #e8d3ad08 2px,
-      transparent 2px,
-      transparent 5px
-    ),
-    linear-gradient(135deg, #f1dfbd, #dfc398, #f5e5c5);
-  border: 5px double #93652e;
-  outline: 2px solid #bd965a;
+    radial-gradient(circle at 10% 10%, #fff1c488, transparent 35%),
+    radial-gradient(circle at 90% 90%, #9b5d2844, transparent 40%),
+    linear-gradient(135deg, #f6dfb2, #d9ad70, #f5dfb6);
+  border: 5px double #8d4c20;
+  outline: 2px solid #d6a65c;
   outline-offset: -13px;
-  box-shadow: inset 0 0 35px #99704455;
+  box-shadow: inset 0 0 40px #86502755;
 }
 
 .paper::before {
   content: "❦";
   position: absolute;
-  top: 12px;
-  left: 20px;
-  color: #96652e;
-  font-size: 35px;
+  top: 8px;
+  left: 15px;
+  color: #79401e;
+  font-size: 42px;
 }
 
 .paper::after {
   content: "❦";
   position: absolute;
-  bottom: 12px;
-  right: 20px;
-  color: #96652e;
-  font-size: 35px;
+  bottom: 8px;
+  right: 15px;
+  color: #79401e;
+  font-size: 42px;
 }
 
 .inner {
-  border: 2px solid #a67a43;
-  outline: 1px solid #c6a36b;
+  border: 2px solid #a66b32;
+  outline: 1px solid #c89a58;
   outline-offset: 5px;
   padding: 30px 22px;
 }
 
 .top {
   text-align: center;
-  color: #93652e;
-  font-size: 36px;
-  margin-bottom: 5px;
+  color: #8b4b25;
+  font-size: 38px;
 }
 
 .title {
   text-align: center;
-  color: #59351f;
-  font-size: 38px;
-  font-weight: 600;
+  font-size: 46px;
   font-style: italic;
+  color: #552414;
   margin: 0;
-  text-shadow: 0 2px 3px #b68a5555;
 }
 
 .subtitle {
   text-align: center;
+  font-size: 19px;
+  letter-spacing: 4px;
+  color: #87502b;
+  margin: 12px 0 35px;
+}
 
+.letter {
+  font-family: 'Caveat', cursive;
+  font-size: 23px;
+  line-height: 1.5;
+  color: #382017;
+  white-space: pre-wrap;
+  overflow-wrap: anywhere;
+}
 
+.seal {
+  width: 100px;
+  height: 100px;
+  margin: 40px auto 10px;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: radial-gradient(circle at 35% 25%,
+    #e36b5b, #951d2c 55%, #4b0914);
+  color: #f4cf89;
+  font-size: 48px;
+  border: 5px solid #9b3c32;
+  box-shadow: 0 7px 18px #4c170e88;
+}
+
+.bottom {
+  text-align: center;
+  color: #6f351d;
+  font-style: italic;
+  font-size: 32px;
+  margin-top: 20px;
+}
+
+.end {
+  text-align: center;
+  color: #e6c17d;
+  margin-top: 30px;
+  font-size: 14px;
+  letter-spacing: 4px;
+}
+
+@media(max-width:500px) {
+  body { padding: 22px 7px; }
+  .heading h1 { font-size: 31px; }
+  .frame { padding: 8px; }
+  .paper { padding: 32px 14px; }
+  .inner { padding: 25px 13px; }
+  .title { font-size: 32px; }
+  .subtitle { font-size: 15px; }
+  .letter { font-size: 21px; line-height: 1.45; }
+  .seal { width: 82px; height: 82px; }
+}
 
 </style>
 </head>
