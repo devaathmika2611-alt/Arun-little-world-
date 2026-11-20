@@ -5,6 +5,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>A Letter For You 💌</title>
+
 <style>
 body {
   background: #fff0f3;
@@ -13,6 +14,7 @@ body {
   padding: 30px 15px;
   color: #75404e;
 }
+
 .letter {
   background: #fffaf5;
   max-width: 500px;
@@ -21,7 +23,9 @@ body {
   border-radius: 15px;
   box-shadow: 0 4px 20px #d9a5b055;
 }
+
 h1 { color: #b34b68; }
+
 textarea {
   width: 90%;
   min-height: 250px;
@@ -30,17 +34,51 @@ textarea {
   border-radius: 10px;
   font-family: Georgia, serif;
   font-size: 16px;
-  background: #fff;
+  background: white;
+}
+
+button {
+  background: #b34b68;
+  color: white;
+  border: none;
+  padding: 12px 25px;
+  border-radius: 25px;
+  margin: 15px 5px;
+  cursor: pointer;
+  font-size: 15px;
 }
 </style>
 </head>
+
 <body>
+
 <div class="letter">
   <h1>A Letter For You 💌</h1>
   <p>Some words come straight from the heart...</p>
-  <textarea placeholder="Write your letter here..."></textarea>
+
+  <textarea id="myLetter"
+  placeholder="Write your letter here..."></textarea>
+
+  <br>
+
+  <button onclick="saveLetter()">Save Letter ❤️</button>
+
+  <p id="message"></p>
+
   <p>Made with love ❤️</p>
 </div>
+
+<script>
+const letterBox = document.getElementById("myLetter");
+
+letterBox.value = localStorage.getItem("myLetter") || "";
+
+function saveLetter() {
+  localStorage.setItem("myLetter", letterBox.value);
+  document.getElementById("message").innerText =
+    "Your letter is saved! ❤️";
+}
+</script>
+
 </body>
 </html>
-
