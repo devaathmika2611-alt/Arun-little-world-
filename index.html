@@ -2,28 +2,377 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>A Little World Made With Love</title>
-  <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>💗</text></svg>">
-  <link rel="stylesheet" href="style.css">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Our Little Secret 💗</title>
+
+<link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>💗</text></svg>">
+
+<link href="https://fonts.googleapis.com/css2?family=Caveat:wght@500;600;700&family=Cormorant+Garamond:wght@500;600;700&display=swap" rel="stylesheet">
+
+<style>
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  padding: 35px 15px;
+  background: radial-gradient(circle at top, #39306b, #17132f 75%);
+  color: #ffe4b5;
+  font-family: 'Cormorant Garamond', serif;
+  text-align: center;
+  overflow-x: hidden;
+}
+
+.container {
+  max-width: 750px;
+  margin: auto;
+}
+
+h1 {
+  font-size: 42px;
+  font-style: italic;
+  color: #ffdfaa;
+}
+
+.subtitle {
+  font-size: 19px;
+  letter-spacing: 3px;
+}
+
+.instruction {
+  font-family: 'Caveat', cursive;
+  font-size: 25px;
+  margin-top: 25px;
+}
+
+/* Date lock */
+
+.lock-area {
+  margin: 35px auto;
+}
+
+.date-input {
+  display: block;
+  width: 230px;
+  max-width: 90%;
+  margin: 15px auto;
+  padding: 14px;
+  border: 2px solid #ffe1a8;
+  border-radius: 25px;
+  background: #fff0d0;
+  color: #55223f;
+  font-size: 20px;
+  text-align: center;
+  letter-spacing: 4px;
+  outline: none;
+}
+
+.unlock-btn {
+  padding: 13px 30px;
+  border: 2px solid #ffe1a8;
+  border-radius: 30px;
+  background: linear-gradient(135deg,#ffdfaa,#e99abb);
+  color: #55223f;
+  font-family: inherit;
+  font-size: 19px;
+  cursor: pointer;
+}
+
+.error {
+  display: none;
+  color: #ffb6c9;
+  font-size: 18px;
+  margin-top: 15px;
+  font-family: 'Caveat', cursive;
+}
+
+.error.show {
+  display: block;
+}
+
+/* Envelope */
+
+.envelope-area {
+  display: none;
+  margin: 65px auto 35px;
+}
+
+.envelope-area.show {
+  display: block;
+}
+
+.envelope {
+  position: relative;
+  width: 280px;
+  height: 180px;
+  max-width: 90%;
+  margin: auto;
+  background: #e9a2bd;
+  border: 3px solid #ffe1a8;
+  border-radius: 8px;
+  box-shadow: 0 12px 35px #0007;
+}
+
+.envelope-back {
+  position: absolute;
+  inset: 0;
+  background: #f4c3d0;
+  border-radius: 5px;
+}
+
+.envelope-flap {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 0;
+  height: 0;
+  border-left: 137px solid transparent;
+  border-right: 137px solid transparent;
+  border-top: 105px solid #c96f98;
+  transform-origin: top;
+  z-index: 4;
+  transition: transform 1s ease;
+}
+
+.envelope-front {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(135deg,#f5c4d1,#d77da4);
+  clip-path: polygon(0 100%, 50% 42%, 100% 100%);
+  z-index: 3;
+}
+
+.seal {
+  position: absolute;
+  top: 65px;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 40px;
+  z-index: 5;
+  transition: .5s;
+}
+
+.envelope.open .envelope-flap {
+  transform: rotateX(180deg);
+}
+
+.envelope.open .seal {
+  opacity: 0;
+}
+
+/* Page cards */
+
+.pages {
+  display: none;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 18px;
+  max-width: 540px;
+  margin: 35px auto;
+}
+
+.pages.show {
+  display: grid;
+}
+
+.page-card {
+  display: block;
+  padding: 24px 12px;
+  background: linear-gradient(135deg,#fff0d0,#e9b6c9);
+  color: #582442;
+  border: 3px double #a45a76;
+  border-radius: 16px;
+  text-decoration: none;
+  box-shadow: 0 8px 25px #0005;
+  opacity: 0;
+  transform: translateY(40px) scale(.7);
+  animation: pop .7s ease forwards;
+}
+
+.page-card:nth-child(1) { animation-delay: .3s; }
+.page-card:nth-child(2) { animation-delay: .6s; }
+.page-card:nth-child(3) { animation-delay: .9s; }
+.page-card:nth-child(4) { animation-delay: 1.2s; }
+
+.page-card:active {
+  transform: scale(.96);
+}
+
+.page-icon {
+  display: block;
+  font-size: 38px;
+  margin-bottom: 8px;
+}
+
+.page-card strong {
+  font-size: 22px;
+}
+
+.page-card small {
+  display: block;
+  margin-top: 5px;
+  font-size: 15px;
+}
+
+@keyframes pop {
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+.footer {
+  margin-top: 45px;
+  font-size: 13px;
+  letter-spacing: 3px;
+}
+
+@media(max-width:450px) {
+  h1 { font-size: 34px; }
+  .subtitle { font-size: 14px; }
+  .pages { gap: 12px; }
+  .page-card { padding: 20px 8px; }
+  .page-card strong { font-size: 19px; }
+}
+</style>
 </head>
 
 <body>
 
-  <header class="hero">
-    <p class="small-heading">A LITTLE PLACE FULL OF MEMORIES</p>
+<div class="container">
 
-    <h1>A Little World<br>Made With Love ♡</h1>
+  <div style="font-size:35px;">✧ 🌙 ✧</div>
 
-    <p class="intro">Some moments deserve to live forever...</p>
+  <h1>A Little World Made With Love ♡</h1>
 
-    <a href="memories.html" class="main-button">
-      Enter Our Little World →
+  <div class="subtitle">
+    A SECRET PLACE FULL OF MEMORIES
+  </div>
+
+  <div class="instruction" id="instruction">
+    A little world is waiting for you... 💌
+    <br>
+    Enter the special date to unlock it.
+  </div>
+
+  <div class="lock-area" id="lockArea">
+
+    <form onsubmit="unlockEnvelope(event)">
+
+      <input
+        class="date-input"
+        id="secretDate"
+        type="text"
+        inputmode="numeric"
+        maxlength="8"
+        placeholder="DDMMYYYY"
+        autocomplete="off"
+        required
+      >
+
+      <button class="unlock-btn" type="submit">
+        Unlock My Envelope 💗
+      </button>
+
+    </form>
+
+    <div class="error" id="error">
+      Oops! That's not the secret date. Try again 💕
+    </div>
+
+  </div>
+
+  <!-- Envelope -->
+
+  <div class="envelope-area" id="envelopeArea">
+
+    <div class="envelope" id="envelope">
+      <div class="envelope-back"></div>
+      <div class="envelope-flap"></div>
+      <div class="seal">💗</div>
+      <div class="envelope-front"></div>
+    </div>
+
+    <div class="instruction">
+      Your little world is open! 🥹
+    </div>
+
+  </div>
+
+  <!-- Pages coming out of envelope -->
+
+  <div class="pages" id="pages">
+
+    <a href="memories.html" class="page-card">
+      <span class="page-icon">📸</span>
+      <strong>Memories</strong>
+      <small>Little moments forever</small>
     </a>
 
-    <div class="flower">✿</div>
-  </header>
+    <a href="letter.html" class="page-card">
+      <span class="page-icon">💌</span>
+      <strong>Our Letter</strong>
+      <small>A few words from the heart</small>
+    </a>
+
+    <a href="gift.html" class="page-card">
+      <span class="page-icon">🎁</span>
+      <strong>Surprise Gift</strong>
+      <small>Something special awaits</small>
+    </a>
+
+    <a href="closing.html" class="page-card">
+      <span class="page-icon">❤️</span>
+      <strong>Final Message</strong>
+      <small>One last little note</small>
+    </a>
+
+  </div>
+
+  <div class="footer">
+    MADE WITH LOVE · FOREVER & ALWAYS
+  </div>
+
+</div>
+
+<script>
+function unlockEnvelope(event) {
+  event.preventDefault();
+
+  const enteredDate =
+    document.getElementById("secretDate").value.trim();
+
+  const error = document.getElementById("error");
+
+  if (enteredDate !== "26112021") {
+    error.classList.add("show");
+    return;
+  }
+
+  error.classList.remove("show");
+
+  document.getElementById("lockArea").style.display = "none";
+  document.getElementById("instruction").style.display = "none";
+
+  const envelopeArea =
+    document.getElementById("envelopeArea");
+
+  envelopeArea.classList.add("show");
+
+  setTimeout(() => {
+    document.getElementById("envelope").classList.add("open");
+  }, 400);
+
+  setTimeout(() => {
+    document.getElementById("pages").classList.add("show");
+  }, 1000);
+}
+</script>
 
 </body>
-</html>
+  </html>
+  
