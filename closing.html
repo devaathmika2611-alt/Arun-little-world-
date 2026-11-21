@@ -73,7 +73,30 @@ a {
   text-decoration: none;
   font-size: 18px;
 }
+.secret-btn {
+  display: inline-block;
+  margin-top: 15px;
+  padding: 13px 28px;
+  border: 2px solid #ffe1a8;
+  border-radius: 30px;
+  background: transparent;
+  color: #ffe4b5;
+  font-family: inherit;
+  font-size: 18px;
+  cursor: pointer;
+}
 
+.secret-message {
+  display: none;
+  font-family: 'Caveat', cursive;
+  font-size: 25px;
+  margin-top: 20px;
+  animation: appear 1s ease;
+}
+
+.secret-message.show {
+  display: block;
+}
 .footer {
   margin-top: 45px;
   letter-spacing: 3px;
@@ -105,13 +128,29 @@ a {
   <div class="heart">💗</div>
 
   <a href="index.html">Back to Beginning ↗</a>
+<br>
 
+<button class="secret-btn" onclick="showSecret()">
+  One More Little Surprise? 💝
+</button>
+
+<div class="secret-message" id="secretMessage">
+  You are the sweetest part of this little world! 💗
+  <br>
+  Never forget how special you are. 🥹
+</div>
+  
   <div class="footer">
     MADE WITH LOVE · FOREVER & ALWAYS
   </div>
 
 </div>
-
+<script>
+function showSecret() {
+  document.getElementById("secretMessage").classList.add("show");
+}
+</script>
+  
 </body>
 </html>
 
