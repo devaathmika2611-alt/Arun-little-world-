@@ -244,6 +244,20 @@ h1 {
   h1 { font-size: 32px; }
   .sticker { font-size: 40px; }
 }
+.continue-btn {
+  display: none;
+  margin: 25px auto;
+  padding: 13px 30px;
+  border-radius: 30px;
+  background: linear-gradient(135deg,#ffdfaa,#e99abb);
+  color: #55223f;
+  text-decoration: none;
+  font-size: 19px;
+}
+
+.continue-btn.show {
+  display: inline-block;
+}
 </style>
 </head>
 
@@ -305,7 +319,9 @@ h1 {
 
     <div style="font-size:35px;">💝</div>
   </div>
-
+<a href="closing.html" class="continue-btn" id="continueBtn">
+  Continue → 💗
+</a>
   <div class="footer">
     FOREVER & ALWAYS · WITH LOVE
   </div>
@@ -343,7 +359,9 @@ function openGift() {
     photo.classList.add("show");
     message.classList.add("show");
   }, 1000);
-
+setTimeout(() => {
+  document.getElementById("continueBtn").classList.add("show");
+}, 1500);
 }
 </script>
 
