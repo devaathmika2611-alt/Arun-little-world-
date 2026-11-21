@@ -9,7 +9,9 @@
 <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@500;600;700&family=Cormorant+Garamond:wght@500;600;700&display=swap" rel="stylesheet">
 
 <style>
-* { box-sizing: border-box; }
+* {
+  box-sizing: border-box;
+}
 
 body {
   margin: 0;
@@ -120,6 +122,55 @@ h1 {
   opacity: .8;
 }
 
+/* Floating emojis */
+
+.stickers {
+  display: none;
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 10;
+}
+
+.stickers.show {
+  display: block;
+}
+
+.sticker {
+  position: absolute;
+  font-size: 48px;
+  opacity: 0;
+  transform: scale(0);
+}
+
+.stickers.show .sticker {
+  animation:
+    stickerBurst 1s cubic-bezier(.2,.8,.3,1.4) forwards,
+    stickerFloat 2s ease-in-out 1s infinite;
+}
+
+@keyframes stickerBurst {
+  0% {
+    opacity: 0;
+    transform: scale(0) rotate(-90deg);
+  }
+  70% {
+    opacity: 1;
+    transform: scale(1.3) rotate(15deg);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1) rotate(0);
+  }
+}
+
+@keyframes stickerFloat {
+  0%,100% { translate: 0 0; }
+  50% { translate: 0 -15px; }
+}
+
+/* Personal GIF */
+
 .photo-surprise {
   display: none;
   max-width: 340px;
@@ -128,6 +179,7 @@ h1 {
   border: 4px solid #ffe1a8;
   border-radius: 20px;
   box-shadow: 0 10px 35px #0008;
+  overflow: hidden;
 }
 
 .photo-surprise.show {
@@ -139,8 +191,9 @@ h1 {
   display: block;
   width: 100%;
   height: auto;
-  border-radius: 15px;
 }
+
+/* Surprise message */
 
 .message {
   display: none;
@@ -160,8 +213,14 @@ h1 {
 }
 
 @keyframes pop {
-  from { opacity: 0; transform: scale(.5); }
-  to { opacity: 1; transform: scale(1); }
+  from {
+    opacity: 0;
+    transform: scale(.5);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
 }
 
 .message h2 {
@@ -183,6 +242,7 @@ h1 {
 
 @media(max-width:500px) {
   h1 { font-size: 32px; }
+  .sticker { font-size: 40px; }
 }
 </style>
 </head>
@@ -192,8 +252,14 @@ h1 {
 <div class="container">
 
   <div style="font-size:35px;">✧ 🌙 ✧</div>
+
   <h1>A Little Surprise For You</h1>
-  <div class="subtitle">A WORLD FULL OF LITTLE LOVE ♡</div>
+
+  <div class="subtitle">
+    A WORLD FULL OF LITTLE LOVE ♡
+  </div>
+
+  <!-- Gift box -->
 
   <div class="gift" id="gift">
     <div class="bow">🎀</div>
@@ -205,12 +271,30 @@ h1 {
     Open Your Gift 🎁
   </button>
 
-  <div class="photo-surprise" id="photoSurprise">
-  <img src="sticker.gif" alt="Our cute animated memories">
+  <!-- Floating emojis -->
+
+  <div class="stickers" id="stickers">
+    <div class="sticker">💗</div>
+    <div class="sticker">🧸</div>
+    <div class="sticker">🦋</div>
+    <div class="sticker">😘</div>
+    <div class="sticker">🥰</div>
+    <div class="sticker">💞</div>
+    <div class="sticker">🐻</div>
+    <div class="sticker">💕</div>
   </div>
+
+  <!-- Personal animated GIF -->
+
+  <div class="photo-surprise" id="photoSurprise">
+    <img src="sticker.gif" alt="Our cute animated memories">
+  </div>
+
+  <!-- Surprise message -->
 
   <div class="message" id="message">
     <h2>Surprise, My Favourite Person! ❤️</h2>
+
     <p>
       You are my favourite gift in this life.
       <br>
@@ -218,21 +302,39 @@ h1 {
       <br>
       Love you forever! 💗
     </p>
+
     <div style="font-size:35px;">💝</div>
   </div>
 
-  <div class="footer">FOREVER & ALWAYS · WITH LOVE</div>
+  <div class="footer">
+    FOREVER & ALWAYS · WITH LOVE
+  </div>
 
 </div>
 
 <script>
 function openGift() {
+
   const gift = document.getElementById("gift");
+  const stickers = document.getElementById("stickers");
   const photo = document.getElementById("photoSurprise");
   const message = document.getElementById("message");
   const button = document.getElementById("openBtn");
 
   gift.classList.add("open");
+  stickers.classList.add("show");
+
+  const allStickers = stickers.querySelectorAll(".sticker");
+
+  allStickers.forEach((sticker, index) => {
+
+    sticker.style.left = (5 + Math.random() * 80) + "%";
+    sticker.style.top = (10 + Math.random() * 75) + "%";
+
+    sticker.style.animationDelay =
+      (index * 0.15) + "s";
+
+  });
 
   button.textContent = "Your Surprise Is Opened ❤️";
   button.disabled = true;
@@ -241,6 +343,7 @@ function openGift() {
     photo.classList.add("show");
     message.classList.add("show");
   }, 1000);
+
 }
 </script>
 
