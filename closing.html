@@ -28,12 +28,19 @@ body {
 
 .closing {
   max-width: 600px;
+  width: 100%;
   animation: appear 1.5s ease;
 }
 
 @keyframes appear {
-  from { opacity: 0; transform: translateY(30px); }
-  to { opacity: 1; transform: translateY(0); }
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 .stars {
@@ -60,7 +67,9 @@ p {
 }
 
 @keyframes beat {
-  50% { transform: scale(1.2); }
+  50% {
+    transform: scale(1.2);
+  }
 }
 
 a {
@@ -73,6 +82,7 @@ a {
   text-decoration: none;
   font-size: 18px;
 }
+
 .secret-btn {
   display: inline-block;
   margin-top: 15px;
@@ -84,19 +94,46 @@ a {
   font-family: inherit;
   font-size: 18px;
   cursor: pointer;
+  transition: 0.3s ease;
+}
+
+.secret-btn:hover {
+  background: #ffe1a8;
+  color: #39306b;
 }
 
 .secret-message {
   display: none;
-  font-family: 'Caveat', cursive;
-  font-size: 25px;
-  margin-top: 20px;
-  animation: appear 1s ease;
+  margin-top: 30px;
+  animation: appear 1.2s ease;
 }
 
 .secret-message.show {
   display: block;
 }
+
+.secret-title {
+  font-family: 'Caveat', cursive;
+  font-size: 30px;
+  margin-bottom: 20px;
+}
+
+.morse {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 20px;
+  line-height: 2;
+  letter-spacing: 2px;
+  color: #ffdfaa;
+  overflow-wrap: anywhere;
+}
+
+.secret-hint {
+  font-family: 'Caveat', cursive;
+  font-size: 23px;
+  margin-top: 20px;
+  line-height: 1.5;
+}
+
 .footer {
   margin-top: 45px;
   letter-spacing: 3px;
@@ -104,7 +141,18 @@ a {
 }
 
 @media(max-width:500px) {
-  h1 { font-size: 37px; }
+  h1 {
+    font-size: 37px;
+  }
+
+  .morse {
+    font-size: 17px;
+    letter-spacing: 1px;
+  }
+
+  .secret-title {
+    font-size: 27px;
+  }
 }
 </style>
 </head>
@@ -128,29 +176,49 @@ a {
   <div class="heart">💗</div>
 
   <a href="index.html">Back to Beginning ↗</a>
-<br>
 
-<button class="secret-btn" onclick="showSecret()">
-  One More Little Surprise? 💝
-</button>
-
-<div class="secret-message" id="secretMessage">
-  You are the sweetest part of this little world! 💗
   <br>
-  Never forget how special you are. 🥹
-</div>
-  
+
+  <button class="secret-btn" onclick="showSecret()">
+    One More Little Surprise? 💝
+  </button>
+
+  <div class="secret-message" id="secretMessage">
+
+    <div class="secret-title">
+      One last little secret... ♡
+    </div>
+
+    <div class="morse">
+      - .... .- -. --. .- .--. ..- .-.. .-.. .<br>
+      .... .- .--. .--. -.--<br>
+      -.-- .-
+    </div>
+
+    <div class="secret-hint">
+      Decode me, if you can. ♡
+      <br>
+      Think in dots &amp; dashes.
+    </div>
+
+  </div>
+
   <div class="footer">
-    MADE WITH LOVE · FOREVER & ALWAYS
+    MADE WITH LOVE · FOREVER &amp; ALWAYS
   </div>
 
 </div>
+
 <script>
 function showSecret() {
-  document.getElementById("secretMessage").classList.add("show");
+  const message = document.getElementById("secretMessage");
+  const button = document.querySelector(".secret-btn");
+
+  message.classList.add("show");
+  button.textContent = "Your little secret is here ♡";
+  button.disabled = true;
 }
 </script>
-  
+
 </body>
 </html>
-
